@@ -1,17 +1,17 @@
 <template>
   <header>
-    <nav class="navbar header-nav header-nav-white fixed-top navbar-expand-lg">
+    <nav
+      class="navbar header-nav header-nav-white fixed-top navbar-expand-lg"
+      v-bind:class="{ 'fixed-header': fix}"
+    >
       <div class="container">
-        <!-- Brand -->
-        <a
-          class="navbar-brand"
-          href="#"
-        >Linhlatin
-          <!-- <span class="theme-bg"></span> -->
-        </a>
-        <!-- / -->
 
-        <!-- Mobile Toggle -->
+        <router-link
+          class="navbar-brand"
+          v-scroll-to="'#home'"
+          :to="{name: 'home'}"
+        >Linhlatin</router-link>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -28,23 +28,35 @@
         <!-- / -->
 
         <!-- Top Menu -->
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarRyan"
-        >
-          <ul class="navbar-nav">
-            <li><a
-                class="nav-link active"
-                href="#home-box"
-              >Home</a></li>
-            <li><a
+        <div>
+          <ul
+            style="display: flex;"
+            class="navbar-nav"
+          >
+            <li>
+              <router-link
                 class="nav-link"
-                href="#aboutme"
-              >About Me</a></li>
-            <li><a
+                v-scroll-to="'#home'"
+                :to="{name: 'home'}"
+              >Home</router-link>
+            </li>
+            <li>
+
+              <router-link
                 class="nav-link"
-                href="#contact"
-              >Contact</a></li>
+                v-scroll-to="'#about'"
+                :to="{name: 'about'}"
+              >About Me
+              </router-link>
+            </li>
+            <li>
+              <router-link
+                class="nav-link"
+                v-scroll-to="'#contact'"
+                :to="{name: 'contact'}"
+              >Contact
+              </router-link>
+            </li>
           </ul>
         </div>
         <!-- / -->
@@ -55,7 +67,42 @@
 
 </template>
 <script>
+import $ from 'jquery';
 export default {
-
+  data() {
+    return {
+      fix: false,
+    }
+  },
+  mounted() {
+    // this.scroll()
+    // this.HeaderFixed()
+    this.HeaderSticky()
+  },
+  methods: {
+    activeNav: function () {
+      this.path = window.location.pathname;
+    },
+    HeaderFixed() {
+      console.log(window.scrollY);
+      if (window.scrollY >= 50) {
+        this.fix = true;
+      } else {
+        this.fix = false;
+      }
+    },
+    scroll: function () {
+      $(window).on("scroll", function () {
+        this.HeaderFixed();
+      });
+    },
+    HeaderSticky: function () {
+      $(".navbar-toggler").on("click", function (a) {
+        a.preventDefault();
+        $(".navbar").addClass("fixed-header");
+      });
+    }
+  },
 }
+
 </script>

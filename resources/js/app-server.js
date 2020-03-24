@@ -1,4 +1,5 @@
 import app from './app';
+app.$router.push(context.url);
 import renderVueComponentToString from 'vue-server-renderer/basic';
 renderVueComponentToString(app, (err, html) => {
     if (err) {
@@ -6,3 +7,7 @@ renderVueComponentToString(app, (err, html) => {
     }
     dispatch(html);
 });
+
+
+
+

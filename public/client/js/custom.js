@@ -27,19 +27,17 @@
 
 
     blog.HeaderScroll = function () {
-        $('.nav-link').on('click', function () {
+        $('a[href*="#"]:not([href="#"])').on('click', function () {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-                $('.nav-link').removeClass('active');
-                this.addClass('active');
                 let target = $(this.hash);
                 console.log(target);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                // if (target.length) {
-                //   $('html,body').animate({
-                //     scrollTop: target.offset().top - 65,
-                //   }, 600);
-                //   return false;
-                // }
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top - 65,
+                    }, 600);
+                    return false;
+                }
             }
         });
     }
@@ -48,9 +46,9 @@
     blog.HeaderFixed = function () {
         console.log(window.scrollY);
         if (window.scrollY >= 50) {
-            $('.navbar').addClass('fixed-header');
+            $('nav').addClass('fixed-header');
         } else {
-            $('.navbar').removeClass('fixed-header');
+            $('nav').removeClass('fixed-header');
         }
     }
 
@@ -206,17 +204,17 @@
             blog.BlogSlider(),
             blog.Counter(),
             blog.ProgressBar(),
-            //   blog.HeaderScroll(),
+            blog.HeaderScroll(),
             blog.PopupVideo(),
-            blog.LightboxGallery();
-        // blog.HeaderSticky(),
-        // blog.HeaderFixed();
+            blog.LightboxGallery(),
+            blog.HeaderSticky(),
+            blog.HeaderFixed();;
     });
 
     $(window).on("scroll", function () {
         blog.Counter(),
-            blog.ProgressBar();
-        // blog.HeaderFixed();
+            blog.ProgressBar(),
+            blog.HeaderFixed();
     });
 
 

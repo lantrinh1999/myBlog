@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -40095,10 +40095,10 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./resources/js/app-server.js":
-/*!************************************!*\
-  !*** ./resources/js/app-server.js ***!
-  \************************************/
+/***/ "./resources/js/app-meta.js":
+/*!**********************************!*\
+  !*** ./resources/js/app-meta.js ***!
+  \**********************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -40107,34 +40107,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ "./resources/js/app.js");
 /* harmony import */ var vue_server_renderer_basic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-server-renderer/basic */ "./node_modules/vue-server-renderer/basic.js");
 /* harmony import */ var vue_server_renderer_basic__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_server_renderer_basic__WEBPACK_IMPORTED_MODULE_1__);
- // require('./bootstrap');
 
-var router = _app__WEBPACK_IMPORTED_MODULE_0__["default"].$router;
-router.push(context.url);
+
 context.meta = _app__WEBPACK_IMPORTED_MODULE_0__["default"].$meta();
-
 vue_server_renderer_basic__WEBPACK_IMPORTED_MODULE_1___default()(_app__WEBPACK_IMPORTED_MODULE_0__["default"], function (err, html) {
-  // if (err) {
-  //     throw new Error(err);
-  // }
+  if (err) {
+    throw new Error(err);
+  }
+
   var _context$meta$inject = context.meta.inject(),
+      title = _context$meta$inject.title,
+      link = _context$meta$inject.link,
       style = _context$meta$inject.style,
       script = _context$meta$inject.script,
-      noscript = _context$meta$inject.noscript;
+      noscript = _context$meta$inject.noscript,
+      meta = _context$meta$inject.meta;
 
-  dispatch("\n            ".concat(style.text({
-    pbody: true
-  }), " ").concat(script.text({
-    pbody: true
-  }), " ").concat(noscript.text({
-    pbody: true
-  }), " ").concat(html, " ").concat(style.text({
-    body: true
-  }), " ").concat(script.text({
-    body: true
-  }), " ").concat(noscript.text({
-    body: true
-  }), "\n        "));
+  dispatch("".concat(meta.text(), " ").concat(title.text(), " ").concat(link.text(), " ").concat(style.text(), " ").concat(script.text(), " ").concat(noscript.text()));
 });
 
 /***/ }),
@@ -40807,14 +40796,14 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 
 /***/ }),
 
-/***/ 1:
-/*!******************************************!*\
-  !*** multi ./resources/js/app-server.js ***!
-  \******************************************/
+/***/ 2:
+/*!****************************************!*\
+  !*** multi ./resources/js/app-meta.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/linhlatin.com/public_html/resources/js/app-server.js */"./resources/js/app-server.js");
+module.exports = __webpack_require__(/*! /home/linhlatin.com/public_html/resources/js/app-meta.js */"./resources/js/app-meta.js");
 
 
 /***/ })

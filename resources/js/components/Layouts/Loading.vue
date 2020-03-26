@@ -6,11 +6,10 @@
 
 <script>
 export default {
-  props: {
-    isLoading: Boolean,
-  }
-}
+    props: {
+        isLoading: Boolean,
+    },
+};
 </script>
 
-<style lang="css" scope>
-</style>
+<style lang="css" scope></style>

@@ -1,19 +1,22 @@
-import app from './app';
+import app from "./app";
 // require('./bootstrap');
-app.$router.push(context.url);
-// import printf from 'printf';
-import renderVueComponentToString from 'vue-server-renderer/basic';
+const router = app.$router;
 
+router.push(context.url);
 
+context.meta = app.$meta();
+import renderVueComponentToString from "vue-server-renderer/basic";
+renderVueComponentToString(app, (err, html) => {
+    // if (err) {
+    //     throw new Error(err);
+    // }
+    const { style, script, noscript } = context.meta.inject();
 
-renderVueComponentToString(app, (err, res) => {
-  dispatch(res);
+    dispatch(`
+            ${style.text({ pbody: true })} ${script.text({
+        pbody: true,
+    })} ${noscript.text({ pbody: true })} ${html} ${style.text({
+        body: true,
+    })} ${script.text({ body: true })} ${noscript.text({ body: true })}
+        `);
 });
-
-// renderVueComponentToString(app, (err, html) => {
-//         if (err) {
-//             throw new Error(err);
-//         }
-//         // printf(html);
-//         dispatch(html);
-//     });

@@ -2,14 +2,13 @@
   <header>
     <nav
       class="navbar header-nav header-nav-white fixed-top navbar-expand-lg"
-      v-bind:class="{ 'fixed-header': fix}"
+      v-bind:class="{ 'fixed-header': fix }"
     >
       <div class="container">
-
         <router-link
           class="navbar-brand"
           v-scroll-to="'#home'"
-          :to="{name: 'home'}"
+          :to="{ name: 'home' }"
         >Linhlatin</router-link>
 
         <button
@@ -37,15 +36,14 @@
               <router-link
                 class="nav-link"
                 v-scroll-to="'#home'"
-                :to="{name: 'home'}"
+                :to="{ name: 'home' }"
               >Home</router-link>
             </li>
             <li>
-
               <router-link
                 class="nav-link"
                 v-scroll-to="'#about'"
-                :to="{name: 'about'}"
+                :to="{ name: 'about' }"
               >About Me
               </router-link>
             </li>
@@ -53,31 +51,31 @@
               <router-link
                 class="nav-link"
                 v-scroll-to="'#contact'"
-                :to="{name: 'contact'}"
+                :to="{ name: 'contact' }"
               >Contact
               </router-link>
             </li>
           </ul>
         </div>
         <!-- / -->
-
-      </div><!-- Container -->
-    </nav> <!-- Navbar -->
+      </div>
+      <!-- Container -->
+    </nav>
+    <!-- Navbar -->
   </header>
-
 </template>
 <script>
-import $ from 'jquery';
+import $ from "jquery";
 export default {
   data() {
     return {
       fix: false,
-    }
+    };
   },
   mounted() {
     // this.scroll()
     // this.HeaderFixed()
-    this.HeaderSticky()
+    this.HeaderSticky();
   },
   methods: {
     activeNav: function () {
@@ -101,8 +99,8 @@ export default {
         a.preventDefault();
         $(".navbar").addClass("fixed-header");
       });
-    }
+    },
   },
-}
-
+};
 </script>
+

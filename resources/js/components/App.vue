@@ -1,38 +1,49 @@
 <template>
   <div>
-    <router-link to="/home">HOME</router-link>
+    <Loading :isLoading="isLoading" />
+    <Header />
     <router-view></router-view>
+    <Footer />
   </div>
 </template>
 <script>
-// import Footer from './Layouts/Footer';
-// import Header from './Layouts/Header';
-// import Loading from './Layouts/Loading';
-import axios from 'axios';
-import HomeCompnt from './Home/Home';
+import Footer from './Layouts/Footer';
+import Header from './Layouts/Header';
+import Loading from './Layouts/Loading';
+import axios from "axios";
+import $ from "jquery";
+import HomeCompnt from "./Home/Home";
+import VueMeta from "vue-meta";
 export default {
-  name: 'App',
+  metaInfo: {
+    title: "Linhlatin",
+    titleTemplate: "%s - Hello!",
+
+  },
+  name: "App",
   components: {
-    // HomeCompnt,
-    // Footer,
-    // Header,
-    // Loading
+    HomeCompnt,
+    Footer,
+    Header,
+    Loading
   },
   data() {
     return {
       isLoading: true,
-      aa: { title: 'a' },
-    }
+      aa: {
+        title: "a",
+      },
+    };
   },
-  created() {
-    // this.ajax();
-  },
+  created() { },
   mounted() {
-
-
-
+    this.removeAttr();
   },
   methods: {
+    removeAttr: function () {
+      $("div").removeAttr("data-server-rendered");
+      $("[data-vue-meta=ssr]").remove();
+    },
   },
-}
+};
 </script>

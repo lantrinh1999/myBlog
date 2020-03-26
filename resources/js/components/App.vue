@@ -1,24 +1,22 @@
 <template>
   <div>
-    <Loading :isLoading="isLoading" />
-    <Header />
-    <HomeCompnt />
-    <Footer />
+    <router-link to="/home">HOME</router-link>
+    <router-view></router-view>
   </div>
 </template>
 <script>
-import Footer from './Layouts/Footer';
-import Header from './Layouts/Header';
-import Loading from './Layouts/Loading';
+// import Footer from './Layouts/Footer';
+// import Header from './Layouts/Header';
+// import Loading from './Layouts/Loading';
 import axios from 'axios';
 import HomeCompnt from './Home/Home';
 export default {
   name: 'App',
   components: {
-    HomeCompnt,
-    Footer,
-    Header,
-    Loading
+    // HomeCompnt,
+    // Footer,
+    // Header,
+    // Loading
   },
   data() {
     return {
@@ -27,7 +25,7 @@ export default {
     }
   },
   created() {
-    this.ajax();
+    // this.ajax();
   },
   mounted() {
 
@@ -35,16 +33,6 @@ export default {
 
   },
   methods: {
-
-    ajax: function () {
-      axios({
-        method: 'get',
-        url: 'http://www.mocky.io/v2/5e798b062d0000a29318bd8a',
-      })
-        .then(function (response) {
-          console.log(response.data);
-        });
-    }
   },
 }
 </script>

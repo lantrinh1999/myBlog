@@ -1,11 +1,4 @@
 window._ = require('lodash');
-import jquery from 'jquery';
-import popperjs from 'popper.js';
-import isotope from 'isotope-layout';
-
-window.isotope = isotope;
-window.Popper = popperjs;
-window.$ = window.jQuery = jquery;
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the

@@ -13,8 +13,13 @@
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
+        "laravel/telescope": "^3.2",
         "laravel/tinker": "^2.0",
-        "spatie/laravel-server-side-rendering": "^1.4"
+        "phpunit/php-invoker": "^3.0",
+        "spatie/laravel-server-side-rendering": "^1.4",
+        "spatie/server-side-rendering": "^0.2.6",
+        "symfony/cache": "^5.0",
+        "symfony/config": "^5.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

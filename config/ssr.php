@@ -4,8 +4,7 @@ return [
     /*
      * Enable or disable the server renderer. Enabled in production by default.
      */
-    // 'enabled' => env('APP_ENV') === 'production',
-    'enabled' => true,
+    'enabled' => env('APP_ENV') === 'production',
 
     /*
      * When server side rendering goes wrong, nothing will be rendered so the
@@ -13,7 +12,7 @@ return [
      * `debug` is enabled, an exception will be thrown when the JavaScript can't
      * be executed.
      */
-    'debug' => env('APP_DEBUG', true),
+    'debug' => env('APP_DEBUG', false),
 
     /*
      * Set to true if you're using Laravel Mix, then you can pass a script

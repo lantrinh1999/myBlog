@@ -8,13 +8,13 @@
   <!-- Header End -->
 
   <!-- Main Start -->
-  <main>
+  <div>
 
     <Banner />
     <About />
     <Contact />
 
-  </main>
+  </div>
   <!-- Main End -->
 
   <!-- Footer-->
@@ -25,7 +25,7 @@ import About from './Section/About';
 import Banner from './Section/Banner';
 import Contact from './Section/Contact';
 export default {
-  name: "Docs",
+  name: "Home",
   components: {
     About,
     Banner,

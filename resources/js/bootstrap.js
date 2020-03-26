@@ -6,7 +6,9 @@ window._ = require('lodash');
  */
 
 window.axios = require('axios');
-
+// window.$ = require('jquery');
+// window.Popper = require('popper.js');
+// require('bootstrap');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**

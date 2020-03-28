@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Loading :isLoading="isLoading" />
+    <Loading
+      v-if="isLoading"
+      :isLoading="isLoading"
+    />
     <Header />
     <router-view></router-view>
     <Footer />
@@ -12,6 +15,7 @@ import Header from './Layouts/Header';
 import Loading from './Layouts/Loading';
 import axios from "axios";
 import $ from "jquery";
+// import meta_data from "../meta/index.js";
 import HomeCompnt from "./Home/Home";
 import VueMeta from "vue-meta";
 export default {
@@ -38,6 +42,10 @@ export default {
   created() { },
   mounted() {
     this.removeAttr();
+    this.$nextTick(function () {
+      this.isLoading = false;
+    });
+    // console.log(meta_data.get());
   },
   methods: {
     removeAttr: function () {

@@ -12,6 +12,12 @@
             <p>
               Website đi ăn cắp giao diện, cơ bản thì back-end laravel, frontend vuejs, chưa có phần quản trị web cũng như dữ liệu đều tĩnh hết. Lười làm quá. Mấy hôm nữa rảnh thì chăm chút tí... :)))
             </p>
+            <p>
+              TấT cả code được public lại đây: <a
+                target="_bank"
+                href="https://github.com/lantrinh1999/myBlog"
+              >GITHUB</a>
+            </p>
             <!-- <a class="m-btn m-btn-theme" href="#contact">Contact me <i class="ti-arrow-right"></i></a> -->
           </div>
         </div>

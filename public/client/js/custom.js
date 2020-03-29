@@ -4,16 +4,16 @@
 
 
     blog.WebLoad = function () {
-        document.getElementById("loading").style.display = "none";
+
     }
 
 
-    blog.HeaderSticky = function () {
-        $(".navbar-toggler").on("click", function (a) {
-            a.preventDefault();
-            $(".navbar").addClass("fixed-header");
-        });
-    }
+    // blog.HeaderSticky = function () {
+    //     $(".navbar-toggler").on("click", function (a) {
+    //         a.preventDefault();
+    //         $(".navbar").addClass("fixed-header");
+    //     });
+    // }
 
 
     blog.MenuClose = function () {
@@ -27,19 +27,19 @@
 
 
     blog.HeaderScroll = function () {
-        $('a[href*="#"]:not([href="#"])').on('click', function () {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-                let target = $(this.hash);
-                console.log(target);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top - 65,
-                    }, 600);
-                    return false;
-                }
-            }
-        });
+        // $('a[href*="#"]:not([href="#"])').on('click', function () {
+        //     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+        //         let target = $(this.hash);
+        //         console.log(target);
+        //         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        //         if (target.length) {
+        //             $('html,body').animate({
+        //                 scrollTop: target.offset().top - 65,
+        //             }, 600);
+        //             return false;
+        //         }
+        //     }
+        // });
     }
 
 
@@ -194,27 +194,27 @@
 
     // Window on Load
     $(window).on("load", function () {
-        blog.WebLoad();
+
     });
 
     $(document).on("ready", function () {
         blog.MasoNry(),
             blog.ClientSlider(),
-            blog.MenuClose(),
+            // blog.MenuClose(),
             blog.BlogSlider(),
             blog.Counter(),
             blog.ProgressBar(),
-            blog.HeaderScroll(),
-            blog.PopupVideo(),
-            blog.LightboxGallery(),
-            blog.HeaderSticky(),
-            blog.HeaderFixed();;
+            // blog.HeaderScroll(),
+            // blog.PopupVideo(),
+            blog.LightboxGallery();;
+            // blog.HeaderSticky(),
+            // blog.HeaderFixed();;
     });
 
     $(window).on("scroll", function () {
         blog.Counter(),
-            blog.ProgressBar(),
-            blog.HeaderFixed();
+            blog.ProgressBar();
+            // blog.HeaderFixed();
     });
 
 

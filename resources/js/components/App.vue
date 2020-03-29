@@ -1,18 +1,20 @@
 <template>
-  <div>
+  <div style="min-height: 100vh">
     <Loading
       v-if="isLoading"
       :isLoading="isLoading"
     />
     <Header />
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
     <Footer />
   </div>
 </template>
 <script>
-import Footer from './Layouts/Footer';
-import Header from './Layouts/Header';
-import Loading from './Layouts/Loading';
+import Footer from "./Layouts/Footer";
+import Header from "./Layouts/Header";
+import Loading from "./Layouts/Loading";
 import axios from "axios";
 import $ from "jquery";
 // import meta_data from "../meta/index.js";
@@ -22,14 +24,13 @@ export default {
   metaInfo: {
     title: "Linhlatin",
     titleTemplate: "%s - Hello!",
-
   },
   name: "App",
   components: {
     HomeCompnt,
     Footer,
     Header,
-    Loading
+    Loading,
   },
   data() {
     return {

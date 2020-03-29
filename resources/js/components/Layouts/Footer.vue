@@ -2,8 +2,8 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-logo">
-                <span
-                    >Linhlatin
+                <span :click="scrtt">
+                    Linhlatin
                     <!-- <span></span> -->
                 </span>
             </div>
@@ -38,5 +38,14 @@
     </footer>
 </template>
 <script>
-export default {};
+export default {
+    methods: {
+        scrtt: function () {
+            window.scrollTo(0, 0);
+        },
+    },
+    mounted() {
+        window.scrollTo(0, 0);
+    },
+};
 </script>

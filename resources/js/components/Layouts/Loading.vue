@@ -9,6 +9,12 @@ export default {
     props: {
         isLoading: Boolean,
     },
+    created() {},
+    mounted() {
+        // window.onload = function () {
+        //   document.getElementById("loading").style.display = "none";
+        // }
+    },
 };
 </script>
 

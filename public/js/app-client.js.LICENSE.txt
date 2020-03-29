@@ -1,8 +1,24 @@
 /*!
+  * Bootstrap v4.4.1 (https://getbootstrap.com/)
+  * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  */
+
+/*!
   * vue-scrollto v2.17.1
   * (c) 2019 Randjelovic Igor
   * @license MIT
   */
+
+/*!
+ * Isotope PACKAGED v3.0.5
+ *
+ * Licensed GPLv3 for open source use
+ * or Isotope Commercial License for commercial use
+ *
+ * https://isotope.metafizzy.co
+ * Copyright 2017 Metafizzy
+ */
 
 /*!
  * Sizzle CSS Selector Engine v2.3.4
@@ -33,6 +49,11 @@
  * https://jquery.org/license
  *
  * Date: 2019-05-01T21:04Z
+ */
+
+/*!
+ * jQuery Migrate - v3.1.0 - 2019-06-08
+ * Copyright OpenJS Foundation and other contributors
  */
 
 /**

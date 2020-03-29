@@ -1,18 +1,23 @@
 <template>
   <header>
     <nav
+      :class="{ 'fixed-header': zfix }"
       class="navbar header-nav header-nav-white fixed-top navbar-expand-lg"
-      v-bind:class="{ 'fixed-header': fix }"
     >
       <div class="container">
-        <router-link
+        <!-- Brand -->
+        <a
           class="navbar-brand"
-          v-scroll-to="'#home'"
-          :to="{ name: 'home' }"
-        >Linhlatin</router-link>
+          href="/"
+        >Linhlatin
+          <!-- <span class="theme-bg"></span> -->
+        </a>
+        <!-- / -->
 
+        <!-- Mobile Toggle -->
         <button
           class="navbar-toggler"
+          :click="(fix = true)"
           type="button"
           data-toggle="collapse"
           data-target="#navbarRyan"
@@ -20,24 +25,25 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <!-- <span></span>
           <span></span>
-          <span></span> -->
+          <span></span>
+          <span></span>
         </button>
         <!-- / -->
 
         <!-- Top Menu -->
-        <div>
-          <ul
-            style="display: flex;"
-            class="navbar-nav"
-          >
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarRyan"
+        >
+          <ul class="navbar-nav">
             <li>
               <router-link
                 class="nav-link"
                 v-scroll-to="'#home'"
                 :to="{ name: 'home' }"
-              >Home</router-link>
+              >Home
+              </router-link>
             </li>
             <li>
               <router-link
@@ -52,7 +58,14 @@
                 class="nav-link"
                 v-scroll-to="'#contact'"
                 :to="{ name: 'contact' }"
-              >Contact
+              >Home
+              </router-link>
+            </li>
+            <li>
+              <router-link
+                class="nav-link"
+                to="aaaaaa"
+              >404
               </router-link>
             </li>
           </ul>
@@ -65,42 +78,73 @@
   </header>
 </template>
 <script>
-import $ from "jquery";
 export default {
   data() {
     return {
-      fix: false,
+      zfix: false,
     };
   },
   mounted() {
-    // this.scroll()
-    // this.HeaderFixed()
-    this.HeaderSticky();
+    this.activeNav();
+    this.HeaderFixed();
+    this.MenuClose();
+    // window.addEventListener('scroll', this.HeaderSticky());
+  },
+  created() {
+    // window.removeEventListener('scroll', this.HeaderSticky());
   },
   methods: {
     activeNav: function () {
-      this.path = window.location.pathname;
-    },
-    HeaderFixed() {
-      console.log(window.scrollY);
-      if (window.scrollY >= 50) {
-        this.fix = true;
-      } else {
-        this.fix = false;
+      let path = window.location.pathname.split("/");
+      let last_path = path.slice(-1)[0];
+      let a = $("body").find(".navbar-nav").find("a");
+      let element = document.getElementById(last_path);
+      let aa = $("body").find(`a[href='/${last_path}']`);
+      if (
+        typeof element != "undefined" &&
+        element != null &&
+        typeof aa != "undefined" &&
+        aa != null
+      ) {
+        setTimeout(() => {
+          let Scroll = this.$scrollTo("#" + last_path);
+        }, 500);
+        if (window.scrollY >= 50) {
+          this.fix = true;
+        } else {
+          this.fix = false;
+        }
+        a.removeClass("active");
+        $(aa).addClass("active");
       }
-    },
-    scroll: function () {
-      $(window).on("scroll", function () {
-        this.HeaderFixed();
+      $("body").on("click", ".navbar-nav a", function () {
+        a.removeClass("active");
+        $(this).addClass("active");
       });
     },
-    HeaderSticky: function () {
-      $(".navbar-toggler").on("click", function (a) {
-        a.preventDefault();
-        $(".navbar").addClass("fixed-header");
+    HeaderFixed: function () {
+      if (window.scrollY >= 50) {
+        $("nav").addClass("fixed-header");
+      } else {
+        $("nav").removeClass("fixed-header");
+      }
+      $(window).on("scroll", function () {
+        if (window.scrollY >= 50) {
+          $("nav").addClass("fixed-header");
+        } else {
+          $("nav").removeClass("fixed-header");
+        }
+      });
+    },
+    MenuClose: function () {
+      $(".navbar-nav .nav-link").on("click", function () {
+        let toggle = $(".navbar-toggler").is(":visible");
+        console.log(toggle);
+        if (toggle) {
+          $(".navbar-collapse").collapse("hide");
+        }
       });
     },
   },
 };
 </script>
-

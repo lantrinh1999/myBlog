@@ -1,7 +1,11 @@
 window._ = require("lodash");
-window.axios = require("axios");
-import jquery from 'jquery';
-import Popper from 'popper.js';
-window.$  = jquery;
-window.Popper  = Popper;
-window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+// window.axios = require("axios");
+import jquery from "jquery";
+import Popper from "popper.js";
+require("bootstrap/dist/js/bootstrap");
+require("jquery-migrate/dist/jquery-migrate");
+import a from "../../public/client/plugin/isotope/isotope.pkgd.min";
+window.a = a;
+window.$ = jquery;
+window.Popper = Popper;
+// window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";

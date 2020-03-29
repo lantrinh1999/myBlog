@@ -7,18 +7,9 @@
       <div class="row align-items-center">
         <div class="col-md-6">
           <div class="about-left">
-            <h2>My name is Trần Đức Linh</h2>
-            <h3>I'm a 1234567890</h3>
-            <p>
-              Website đi ăn cắp giao diện, cơ bản thì back-end laravel, frontend vuejs, chưa có phần quản trị web cũng như dữ liệu đều tĩnh hết. Lười làm quá. Mấy hôm nữa rảnh thì chăm chút tí... :)))
-            </p>
-            <p>
-              TấT cả code được public lại đây: <a
-                target="_bank"
-                href="https://github.com/lantrinh1999/myBlog"
-              >GITHUB</a>
-            </p>
-            <!-- <a class="m-btn m-btn-theme" href="#contact">Contact me <i class="ti-arrow-right"></i></a> -->
+            <h2>{{ about.title || 'Linhlatin' }}</h2>
+            <h3>{{ about.description || 'Linhlatin' }}</h3>
+            <p v-html="about.contents || 'Linhlatin'"></p>
           </div>
         </div>
         <!-- col -->
@@ -99,3 +90,10 @@
     <!-- container -->
   </section>
 </template>
+<script>
+export default {
+  props: {
+    about: Object,
+  }
+}
+</script>

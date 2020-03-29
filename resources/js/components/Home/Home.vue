@@ -1,29 +1,16 @@
 <template>
-  <!-- Loading -->
-
-  <!-- / -->
-
-  <!-- Header -->
-
-  <!-- Header End -->
-
-  <!-- Main Start -->
-
   <div>
-
-    <Banner />
-    <About />
-    <Contact />
+    <Banner :banner="banner" />
+    <About :about="about" />
+    <Contact :contact="contact" />
   </div>
-  <!-- Main End -->
 
-  <!-- Footer-->
 </template>
 <script>
-
 import About from "./Section/About";
 import Banner from "./Section/Banner";
 import Contact from "./Section/Contact";
+import axios from 'axios';
 export default {
   metaInfo: {
     title: "Home",
@@ -33,7 +20,29 @@ export default {
   components: {
     About,
     Banner,
-    Contact
+    Contact,
+  },
+  data() {
+    return {
+      //   data_home: {},
+      about: {},
+      banner: {},
+      contact: {},
+    }
+  },
+  created() {
+    this.$axios.get(`/api`)
+      .then(response => {
+        let data = response.data;
+        this.banner = data.banner;
+        this.about = data.about;
+        this.contact = data.banner;
+        console.log(this.banner);
+
+      })
+      .catch(e => {
+        this.errors.push(e)
+      })
   },
 };
 </script>

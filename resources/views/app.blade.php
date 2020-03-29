@@ -33,7 +33,7 @@
     <body>
         <div id="app">
             <!------>
-            {!! str_replace(" " . " ", " " ,ssr('js/app-server.js')->fallback('')->render()) !!}
+            {!! str_replace(" " . " ", " " ,ssr(mix('js/app-server.js'))->fallback('')->render()) !!}
             <!------>
         </div>
         {{-- <script src="client/js/jquery-3.2.1.min.js"></script>

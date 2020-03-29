@@ -1,6 +1,6 @@
 {
-    "/js/app-client.js": "/js/app-client.js",
-    "/js/app-meta.js": "/js/app-meta.js",
-    "/js/app-server.js": "/js/app-server.js",
-    "/css/all.css": "/css/all.css"
+    "/js/app-client.js": "/js/app-client.js?id=dcff75cfed8a1fea2c94",
+    "/js/app-meta.js": "/js/app-meta.js?id=3a82418d833ae4f0e946",
+    "/js/app-server.js": "/js/app-server.js?id=e5eb1c5fab5e2e6a5962",
+    "/css/all.css": "/css/all.css?id=6d27a011d8d2e4e7f24c"
 }

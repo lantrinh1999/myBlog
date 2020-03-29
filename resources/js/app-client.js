@@ -2,19 +2,16 @@ require("./bootstrap");
 import app from "./app";
 import Vue from "vue";
 const router = app.$router;
+import axios from "axios";
+import CripLoading from "crip-vue-loading";
+Vue.use(CripLoading, { axios });
 router.beforeEach((to, from, next) => {
     let name = to.name.toLowerCase();
-    if (name != 'contact' && name != 'home' && name != 'about') {
-
-            window.scrollTo(0, 0);
-
+    if (name != "contact" && name != "homea" && name != "about") {
+        window.scrollTo(0, 0);
     }
-
-        next();
-
-    $('.nav-link').removeClass('active');
-
-
+    next();
+    $(".nav-link").removeClass("active");
 });
 var VueScrollTo = require("vue-scrollto");
 Vue.use(VueScrollTo, {

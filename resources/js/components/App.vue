@@ -1,13 +1,19 @@
 <template>
-  <div style="min-height: 100vh">
+  <div style="min-height: 100vh;">
     <Loading
       v-if="isLoading"
       :isLoading="isLoading"
     />
     <Header />
-    <keep-alive>
-      <router-view></router-view>
-    </keep-alive>
+    <transition
+      name="fade"
+      mode="out-in"
+    >
+      <keep-alive v-if="typeof $route.meta.keepAlive == 'boolean' && $route.meta.keepAlive">
+        <router-view></router-view>
+      </keep-alive>
+      <router-view v-if="typeof $route.meta.keepAlive == 'undefined' || !$route.meta.keepAlive"></router-view>
+    </transition>
     <Footer />
   </div>
 </template>

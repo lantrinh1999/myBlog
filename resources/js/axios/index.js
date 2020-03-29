@@ -1,7 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 import Vue from "vue";
-axios.setBaseURL('/api');
+axios.setBaseURL("/api");
 Vue.use(axios);
-
 
 export default axios;

@@ -3,37 +3,53 @@ import Router from "vue-router";
 
 import Home from "../components/Home/Home.vue";
 import PageNotFound from "../components/PageNotFound.vue";
-// import About from '../components/Home/Section/About.vue';
-//  import Banner from '../components/Home/Section/Banner.vue';
-
-// import Contact from '../components/Home/Section/Contact.vue';
-const routes = [{
+const routes = [
+    {
         path: "/",
         name: "home",
         component: Home,
+        meta: {
+            keepAlive: true
+        },
     },
     {
         path: "/about",
         name: "about",
         component: Home,
+        meta: {
+            keepAlive: true
+        },
     },
     {
         path: "/contact",
         name: "contact",
         component: Home,
+        meta: {
+            keepAlive: true
+        },
     },
     {
         path: "404",
         name: "PageNotFound",
         component: PageNotFound,
+        meta: {
+            keepAlive: true
+        },
     },
     {
-        path: '*',
+        path: "*",
         redirect: {
-            name: 'PageNotFound'
+            name: "PageNotFound",
         },
-    }
-
+        meta: {
+            keepAlive: true
+        },
+    },
+    {
+        path: "/vuichoi-giaitri",
+        name: "entertainment",
+        component: require("../components/Entertainment/App.vue"),
+    },
 ];
 
 Vue.use(Router);

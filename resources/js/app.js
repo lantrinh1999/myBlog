@@ -5,7 +5,7 @@ import axios from "axios";
 Vue.prototype.$axios = axios;
 
 Vue.use(VueMeta, {
-    // refreshOnceOnNavigation: true,
+    refreshOnceOnNavigation: true,
 });
 // import Vuex from "vuex";
 import router from "./router";

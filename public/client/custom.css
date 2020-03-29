@@ -6,48 +6,54 @@
 }
 
 #notfound {
-    position: relative;
-    min-height: 100vh;
+    /* position: relative; */
+    /* min-height: 100vh; */
+    margin: 0 auto;
+    margin-top: 100px;
 }
 
-#notfound .notfound {
+#notfound+footer {
+    margin-top: 10px !important;
+}
+
+/* #notfound .notfound {
     position: absolute;
     left: 50%;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-}
+} */
 
 .notfound {
-    max-width: 520px;
-    width: 100%;
+    /* max-width: 520px; */
+    /* width: 100%; */
     line-height: 1.4;
     text-align: center;
+    margin: 0 auto;
 }
 
 .notfound .notfound-404 {
     position: relative;
-    height: 240px;
+    /* height: 240px; */
 }
 
 .notfound .notfound-404 h1 {
-    /* font-family: "Montserrat", sans-serif; */
     font-family: 'Roboto Mono', monospace;
-    font-family: 'Space Mono', monospace;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    /* font-family: 'Space Mono',monospace; */
+    /* position: absolute; */
+    /* left: 50%; */
+    /* top: 50%; */
+    /* -webkit-transform: translate(-50%,-50%); */
+    /* -ms-transform: translate(-50%,-50%); */
+    /* transform: translate(-50%,-50%); */
     font-size: 252px;
     font-weight: 900;
-    margin: 0px;
+    margin: 0;
     color: #262626;
     text-transform: uppercase;
-    letter-spacing: -40px;
-    margin-left: -20px;
+    /* letter-spacing: -40px; */
+    /* margin-left: -20px; */
 }
 
 .notfound .notfound-404 h1>span {
@@ -81,9 +87,9 @@
 }
 
 @media only screen and (max-width: 767px) {
-    .notfound .notfound-404 {
+    /* .notfound .notfound-404 {
         height: 200px;
-    }
+    } */
 
     .notfound .notfound-404 h1 {
         font-size: 200px;
@@ -91,17 +97,29 @@
 }
 
 @media only screen and (max-width: 480px) {
-    .notfound .notfound-404 {
+    /* .notfound .notfound-404 {
         height: 162px;
-    }
+    } */
 
     .notfound .notfound-404 h1 {
         font-size: 162px;
-        height: 150px;
+        /* height: 150px; */
         line-height: 162px;
     }
 
     .notfound h2 {
         font-size: 16px;
     }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
 }

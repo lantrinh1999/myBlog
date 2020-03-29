@@ -40,6 +40,7 @@
     "dependencies": {
         "@types/jquery": "^3.3.34",
         "bootstrap-vue": "^2.9.0",
+        "crip-vue-loading": "^1.2.5",
         "isotope": "^1.0.0-alpha.3",
         "isotope-layout": "^3.0.6",
         "jquery-migrate": "^3.1.0",
